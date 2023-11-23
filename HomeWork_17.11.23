@@ -1,0 +1,76 @@
+--GridView Widget--
+GridView, öğeleri bir ızgara düzeninde düzenlemek için kullanılan bir Flutter widget'ıdır. 
+Genellikle resim galerileri, ürün listeleri veya herhangi bir öğe koleksiyonunu düzenlemek için kullanılır. 
+GridView widget'ı, bir dizi child widget'ı içerir ve bu widget'lar belirli bir düzen içinde yerleştirilir.
+GridView widget'ını oluşturmak için GridView.builder veya GridView.count gibi bir konstruktörü kullanmalısınız.
+
+
+--GoogleFonts üzerinden farklı font kullanımı--
+Flutter'da farklı fontları kullanmak için google_fonts paketini kullanabilirsiniz. Bu paket, Google Fonts API'sini kullanarak uygulamanıza çeşitli fontları eklemenize olanak tanır. 
+pubspec.yml'e google_fonts: ^2.1.0 eklenir, sonra import 'package:google_fonts/google_fonts.dart'; ile projeye dahil edilir.
+Özellikle bir widget için ya da tüm uygulama teması için farklı fontlar kullanılabilir.
+
+
+--Container widget'i içerisinde Decorationlar, gradient kullanımı--
+Container widget'i, Flutter'da bir konteyneri temsil eden ve genellikle diğer widget'ları içeren bir düzenleme öğesidir. 
+Container widget'ı, çeşitli dekorasyon özelliklerini destekler, bu da arka plan rengi, kenarlık, gölge ve gradientler gibi özelliklerle özelleştirilmesine olanak tanır. 
+İşte bir Container widget'ını dekorasyonlar ve gradient kullanarak özelleştirmenin örnek bir kodu:
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('Container ve Decoration Örneği'),
+        ),
+        body: Center(
+          child: Container(
+            width: 200,
+            height: 200,
+            decoration: BoxDecoration(
+              color: Colors.blue, // Arka plan rengi
+              borderRadius: BorderRadius.circular(20), // Köşe yuvarlama
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.3),
+                  blurRadius: 5,
+                  offset: Offset(0, 3),
+                ),
+              ], // Gölge
+              gradient: LinearGradient(
+                colors: [Colors.blue, Colors.green], // Gradient renkleri
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ), // Gradient
+            ),
+            child: Center(
+              child: Text(
+                'Merhaba',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+Yukarıdaki örnekte, Container widget'ı içinde decoration özelliği kullanılarak çeşitli dekorasyonlar eklenmiştir.
+
+
+--Inkwell Classı nedir?--
+InkWell sınıfı, Flutter'da dokunma (tapping) veya tıklama (clicking) gibi kullanıcı etkileşimleri için kullanılan bir widget'tır. 
+InkWell widget'ı, kullanıcı dokunduğunda bir efekt göstererek kullanıcı etkileşimini vurgular. 
+Bu efekt genellikle bir su damlası benzeri bir animasyon içerir.
+
+İşlevsel olarak, InkWell bir GestureDetector sarmalayıcısıdır ve dokunma, tıklama veya uzun basma gibi kullanıcı etkileşimlerini algılar. 
+Bu etkileşimlere tepki olarak, birçok görsel efekt sunar. Örneğin, bir renk değişikliği, bir su damlası efekti veya çeşitli animasyonlar gibi görsel geri bildirimler sağlanabilir.
